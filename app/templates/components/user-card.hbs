@@ -1,0 +1,13 @@
+<p>
+    <b>
+        {{user.name}}
+    </b> 
+     has visited to {{user.numberOfCountriesVisited}} countries and started on {{user.dateStartedAtASH}}
+</p>
+<p>
+    {{#if isRookie}}
+        <p>**Rookie Alert!</p>
+    {{/if}}
+</p>
+
+{{yield}}

@@ -1,5 +1,8 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
 
+<nav>
+    {{#link-to 'index'}} Home {{/link-to}}    {{!-- --}}
+    {{#link-to 'members.index'}} Our People {{/link-to}}
+</nav>
+
+<h1>Welcome to TechTris</h1>
 {{outlet}}

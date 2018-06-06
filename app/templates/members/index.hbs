@@ -1,0 +1,44 @@
+<h2>TechTris Members</h2>
+
+<h3>Dog Lovers</h3>
+<ul>
+    {{#each dogList as |d|}}
+        <li>
+            {{#user-card
+                user = d
+            }}
+            {{/user-card}}
+        </li>
+    {{/each}}
+</ul>
+
+<h3>Most Traveld Team Member</h3>
+<ul>
+    {{#each mostTraveledList as |d|}}
+        <li>
+            {{#most-travel
+                user = d
+            }}
+            {{/most-travel}}
+        </li>
+    {{/each}}
+</ul>
+
+
+
+{{!-- <p>
+    Name: {{model.name}}
+    Number of Countries Visited: {{model.numberOfCountriesVisited}}
+</p> --}}
+<h3>All Team Member</h3>
+    <ol>
+        {{#each model as |user|}}
+          <li>
+              {{#link-to 'members.member' user}} 
+                    {{user.name}} 
+              {{/link-to}}
+          </li>  
+        {{/each}}
+    </ol>
+   
+{{outlet}}
