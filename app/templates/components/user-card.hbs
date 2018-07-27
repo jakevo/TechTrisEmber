@@ -5,9 +5,37 @@
      has visited to {{user.numberOfCountriesVisited}} countries and started on {{user.dateStartedAtASH}}
 </p>
 <p>
+    {{#if role}}
+        <dl>
+            <dt>Role: {{role}}</dt>
+            {{!-- <dd>{{role}}</dd> --}}
+        </dl>
+    {{/if}}
+    {{role-creation
+        roleTitle=role
+        titleChanged = (action 'assignRole')
+    }}
+    
     {{#if isRookie}}
         <p>**Rookie Alert!</p>
     {{/if}}
+    <form onsubmit={{action 'toogleUserdEmber'}}>
+        {{ho-input
+            label='I understand it is a serious business'
+            inputId=confirmId
+            attributes=(hash 
+                checked=hasAgreed
+            )
+            type='checkbox'
+            onChange=(action (mut hasAgreed) value='target.checked')
+        }}
+        <button type="submit" disabled={{hasNotAgreed}}>
+            Toogle Rookie
+        </button> 
+
+    </form>
 </p>
+
+
 
 {{yield}}

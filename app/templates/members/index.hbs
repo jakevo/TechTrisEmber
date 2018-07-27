@@ -35,7 +35,7 @@
         {{#each model as |user|}}
           <li>
               {{#link-to 'members.member' user}} 
-                    {{user.name}} 
+                    {{user.name}} and his/her favorite food is {{user.favoriteFood}}
               {{/link-to}}
           </li>  
         {{/each}}
